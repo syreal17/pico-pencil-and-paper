@@ -1,0 +1,35 @@
+         The Return Value                        The Stack
+                                                              
+            AX           AH       AL            +---------+                
+    +----------------+--------+--------+        |         |                
+EAX |                |        |        |        |   EBP   |                
+    +----------------+--------+--------+        | (dword) |                
+                                                |         | <--- [EBP]
+                                                +---------+                
+                                                |         |                
+                                                | return  |                
+                                                | address |                
+                                                | (dword) | <--- [EBP+0x4]
+                                                +---------+                
+                                                |         |                
+                                                |  first  |                
+                                                | argument|                
+                                                | (dword) | <--- [EBP+0x8]
+                                                +---------+                
+                                                |         |                
+                                                | second  |                
+                                                | argument|                
+                                                | (dword) | <--- [EBP+0xC]
+                                                +---------+
+                                                |         |                
+                                                |  third  |                
+                                                | argument|                
+                                                | (dword) | <--- [EBP+0x10]
+                                                +---------+
+                                                +---------+               
+                                                |         |                
+                                                | previous|
+                                                |  stack  |
+                                                |  frame  |
+                                                :         :
+                                                .         .
